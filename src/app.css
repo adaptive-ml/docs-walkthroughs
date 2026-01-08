@@ -1,0 +1,17 @@
+/* Minimal global styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+/* Dark mode background when embedded - matches Mintlify's --background-dark */
+html.dark,
+html.dark body {
+  background: rgb(11, 12, 16);
+}

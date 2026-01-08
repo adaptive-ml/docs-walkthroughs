@@ -1,0 +1,50 @@
+{
+  "name": "upload-dataset",
+  "title": "Upload a Dataset",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "chat",
+      "image": "step01_chat_light.webp",
+      "imageDark": "step01_chat_dark.webp",
+      "description": "Open Datasets",
+      "cursor": { "x": 0.0996, "y": 0.3375 }
+    },
+    {
+      "step": 2,
+      "name": "datasets",
+      "image": "step02_datasets_light.webp",
+      "imageDark": "step02_datasets_dark.webp",
+      "description": "Create a new dataset",
+      "cursor": { "x": 0.9444, "y": 0.0406 }
+    },
+    {
+      "step": 3,
+      "name": "select_type",
+      "image": "step03_select_type_light.webp",
+      "imageDark": "step03_select_type_dark.webp",
+      "description": "Select the dataset format",
+      "cursor": { "x": 0.296, "y": 0.3375 }
+    },
+    {
+      "step": 4,
+      "name": "file_selected",
+      "image": "step04_file_selected_light.webp",
+      "imageDark": "step04_file_selected_dark.webp",
+      "description": "Upload the file",
+      "cursor": { "x": 0.827, "y": 0.7438 }
+    },
+    {
+      "step": 5,
+      "name": "result",
+      "image": "step05_result_light.webp",
+      "imageDark": "step05_result_dark.webp",
+      "description": "Dataset uploaded",
+      "cursor": null
+    }
+  ]
+}

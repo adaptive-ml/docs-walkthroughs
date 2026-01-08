@@ -1,0 +1,62 @@
+{
+  "name": "create-usecase",
+  "title": "Create a Use Case",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "home",
+      "image": "step01_home_light.webp",
+      "imageDark": "step01_home_dark.webp",
+      "description": "Create a new use case",
+      "cursor": {
+        "x": 0.9417,
+        "y": 0.0406
+      }
+    },
+    {
+      "step": 2,
+      "name": "enter_name",
+      "image": "step02_enter_name_light.webp",
+      "imageDark": "step02_enter_name_dark.webp",
+      "description": "Enter a name",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.4562
+      }
+    },
+    {
+      "step": 3,
+      "name": "create_usecase",
+      "image": "step03_create_usecase_light.webp",
+      "imageDark": "step03_create_usecase_dark.webp",
+      "description": "Create",
+      "cursor": {
+        "x": 0.7085,
+        "y": 0.6462
+      }
+    },
+    {
+      "step": 4,
+      "name": "select_usecase",
+      "image": "step04_select_usecase_light.webp",
+      "imageDark": "step04_select_usecase_dark.webp",
+      "description": "Open it",
+      "cursor": {
+        "x": 0.9284,
+        "y": 0.912
+      }
+    },
+    {
+      "step": 5,
+      "name": "usecase_landing",
+      "image": "step05_usecase_landing_light.webp",
+      "imageDark": "step05_usecase_landing_dark.webp",
+      "description": "Your project is ready",
+      "cursor": null
+    }
+  ]
+}

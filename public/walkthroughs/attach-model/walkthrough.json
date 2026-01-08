@@ -1,0 +1,54 @@
+{
+  "name": "attach-model",
+  "title": "Attach a Model",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "overview",
+      "image": "step01_overview_light.webp",
+      "imageDark": "step01_overview_dark.webp",
+      "description": "Click 'Attach model' to add a model to your use case",
+      "cursor": {
+        "x": 0.943,
+        "y": 0.2481
+      }
+    },
+    {
+      "step": 2,
+      "name": "select_model_dropdown",
+      "image": "step02_select_model_dropdown_light.webp",
+      "imageDark": "step02_select_model_dropdown_dark.webp",
+      "description": "Click to select a model",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.4963
+      }
+    },
+    {
+      "step": 3,
+      "name": "select_qwen_model",
+      "image": "step03_select_qwen_model_light.webp",
+      "imageDark": "step03_select_qwen_model_dark.webp",
+      "description": "Select 'Qwen3 4B Instruct 2507'",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.6225
+      }
+    },
+    {
+      "step": 4,
+      "name": "attach_button",
+      "image": "step04_attach_button_light.webp",
+      "imageDark": "step04_attach_button_dark.webp",
+      "description": "Click 'Attach' to deploy the model",
+      "cursor": {
+        "x": 0.7087,
+        "y": 0.7312
+      }
+    }
+  ]
+}

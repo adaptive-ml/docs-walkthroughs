@@ -1,0 +1,82 @@
+{
+  "name": "quickstart-model",
+  "title": "Deploy and Chat with a Model",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "overview",
+      "folder": "attach-model",
+      "image": "step01_overview_light.webp",
+      "imageDark": "step01_overview_dark.webp",
+      "description": "Add a model to deploy",
+      "cursor": { "x": 0.943, "y": 0.2481 }
+    },
+    {
+      "step": 2,
+      "name": "select_model_dropdown",
+      "folder": "attach-model",
+      "image": "step02_select_model_dropdown_light.webp",
+      "imageDark": "step02_select_model_dropdown_dark.webp",
+      "description": "Select a model",
+      "cursor": { "x": 0.5, "y": 0.4963 }
+    },
+    {
+      "step": 3,
+      "name": "select_qwen_model",
+      "folder": "attach-model",
+      "image": "step03_select_qwen_model_light.webp",
+      "imageDark": "step03_select_qwen_model_dark.webp",
+      "description": "Select 'Qwen3 4B Instruct 2507'",
+      "cursor": { "x": 0.5, "y": 0.6225 }
+    },
+    {
+      "step": 4,
+      "name": "attach_button",
+      "folder": "attach-model",
+      "image": "step04_attach_button_light.webp",
+      "imageDark": "step04_attach_button_dark.webp",
+      "description": "Deploy the model",
+      "cursor": { "x": 0.7087, "y": 0.7312 }
+    },
+    {
+      "step": 5,
+      "name": "overview_deployed",
+      "folder": "chat-with-model",
+      "image": "step01_overview_deployed_light.webp",
+      "imageDark": "step01_overview_deployed_dark.webp",
+      "description": "Test it with a message",
+      "cursor": { "x": 0.8961, "y": 0.3825 }
+    },
+    {
+      "step": 6,
+      "name": "chat_input",
+      "folder": "chat-with-model",
+      "image": "step02_chat_input_light.webp",
+      "imageDark": "step02_chat_input_dark.webp",
+      "description": "Type a message",
+      "cursor": { "x": 0.6, "y": 0.8938 }
+    },
+    {
+      "step": 7,
+      "name": "chat_submit",
+      "folder": "chat-with-model",
+      "image": "step03_chat_submit_light.webp",
+      "imageDark": "step03_chat_submit_dark.webp",
+      "description": "Send",
+      "cursor": { "x": 0.8766, "y": 0.9425 }
+    },
+    {
+      "step": 8,
+      "name": "chat_result",
+      "folder": "chat-with-model",
+      "image": "step04_chat_result_light.webp",
+      "imageDark": "step04_chat_result_dark.webp",
+      "description": "The model responds",
+      "cursor": null
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "chat-with-model",
+  "title": "Chat with a Model",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "overview_deployed",
+      "image": "step01_overview_deployed_light.webp",
+      "imageDark": "step01_overview_deployed_dark.webp",
+      "description": "Click the chat button to start chatting with your model",
+      "cursor": {
+        "x": 0.8961,
+        "y": 0.3825
+      }
+    },
+    {
+      "step": 2,
+      "name": "chat_input",
+      "image": "step02_chat_input_light.webp",
+      "imageDark": "step02_chat_input_dark.webp",
+      "description": "Type your message",
+      "cursor": {
+        "x": 0.6,
+        "y": 0.8938
+      }
+    },
+    {
+      "step": 3,
+      "name": "chat_submit",
+      "image": "step03_chat_submit_light.webp",
+      "imageDark": "step03_chat_submit_dark.webp",
+      "description": "Click to send your message",
+      "cursor": {
+        "x": 0.8766,
+        "y": 0.9425
+      }
+    },
+    {
+      "step": 4,
+      "name": "chat_result",
+      "image": "step04_chat_result_light.webp",
+      "imageDark": "step04_chat_result_dark.webp",
+      "description": "Your model responds to your message",
+      "cursor": null
+    }
+  ]
+}
