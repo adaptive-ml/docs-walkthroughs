@@ -126,15 +126,21 @@
       event.preventDefault();
       const href = target.getAttribute('href');
       if (href) {
-        // Navigate the parent window using referrer to get the correct origin
+        // Get parent origin - try ancestorOrigins first (works cross-origin), fall back to referrer
+        let parentOrigin = '';
         try {
-          const parentOrigin = document.referrer ? new URL(document.referrer).origin : '';
-          const fullUrl = parentOrigin ? new URL(href, parentOrigin).href : href;
-          window.top?.location.assign(fullUrl);
+          if (location.ancestorOrigins?.length > 0) {
+            parentOrigin = location.ancestorOrigins[0];
+          } else if (document.referrer) {
+            parentOrigin = new URL(document.referrer).origin;
+          }
         } catch (e) {
-          // Fallback: try to open in top frame
-          window.open(href, '_top');
+          // Ignore URL parsing errors
         }
+
+        // Navigate the top window with full URL
+        const fullUrl = parentOrigin ? new URL(href, parentOrigin).href : href;
+        window.top?.location.assign(fullUrl);
       }
     }
   }
