@@ -15,6 +15,7 @@
   let currentStep = $state(0);
   let error = $state<string | null>(null);
   let firstImageLoaded = $state(false);
+  let parentDescriptions = $state<Record<number, string> | null>(null);
 
   // Ready when both data and first image are loaded
   const isReady = $derived(data !== null && firstImageLoaded);
@@ -26,6 +27,10 @@
   );
   const cursorX = $derived(step?.cursor ? step.cursor.x * 100 : 0);
   const cursorY = $derived(step?.cursor ? step.cursor.y * 100 : 0);
+  const displayDescription = $derived(
+    parentDescriptions?.[currentStep] ?? step?.description ?? ''
+  );
+  const hasHtmlDescription = $derived(parentDescriptions?.[currentStep] !== undefined);
 
   // Prefetch adjacent steps when step or theme changes
   $effect(() => {
@@ -75,7 +80,21 @@
       if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', handleKeydown);
-    return () => window.removeEventListener('keydown', handleKeydown);
+
+    // Listen for descriptions from parent window
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'walkthrough-descriptions') {
+        if (event.data.walkthroughName === walkthroughName) {
+          parentDescriptions = event.data.descriptions;
+        }
+      }
+    };
+    window.addEventListener('message', handleMessage);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+      window.removeEventListener('message', handleMessage);
+    };
   });
 
   function prev() {
@@ -88,6 +107,17 @@
 
   function goToStep(index: number) {
     currentStep = index;
+  }
+
+  function handleDescriptionClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.tagName.toLowerCase() === 'a') {
+      event.preventDefault();
+      const href = target.getAttribute('href');
+      if (href) {
+        window.parent.postMessage({ type: 'walkthrough-link-click', href }, '*');
+      }
+    }
   }
 </script>
 
@@ -102,7 +132,14 @@
     <!-- Header bar -->
     <div class="header">
       <span class="step-badge">{currentStep + 1} of {data.steps.length}</span>
-      <p class="description">{step?.description}</p>
+      {#if hasHtmlDescription}
+        <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_noninteractive_element_interactions -->
+        <p class="description" onclick={handleDescriptionClick}>
+          {@html displayDescription}
+        </p>
+      {:else}
+        <p class="description">{displayDescription}</p>
+      {/if}
     </div>
 
     <!-- Image viewer -->
@@ -184,6 +221,22 @@
     font-size: 14px;
     color: var(--text);
     line-height: 1.45;
+  }
+
+  .description :global(a) {
+    color: #275AF1;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 2px;
+    transition: text-decoration-color 0.15s ease;
+  }
+
+  .description :global(a:hover) {
+    text-decoration-color: currentColor;
+  }
+
+  .walkthrough.dark .description :global(a) {
+    color: #80a0fe;
   }
 
   .viewer {

@@ -18,3 +18,16 @@ export interface WalkthroughData {
   viewport: { width: number; height: number };
   steps: WalkthroughStep[];
 }
+
+/** Message from parent to inject descriptions with HTML links */
+export interface WalkthroughDescriptionsMessage {
+  type: 'walkthrough-descriptions';
+  walkthroughName: string;
+  descriptions: Record<number, string>;  // step index (0-based) -> HTML string
+}
+
+/** Message from iframe when link is clicked */
+export interface WalkthroughLinkClickMessage {
+  type: 'walkthrough-link-click';
+  href: string;
+}
