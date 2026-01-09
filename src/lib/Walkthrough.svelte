@@ -126,7 +126,15 @@
       event.preventDefault();
       const href = target.getAttribute('href');
       if (href) {
-        window.parent.postMessage({ type: 'walkthrough-link-click', href }, '*');
+        // Navigate the parent window using referrer to get the correct origin
+        try {
+          const parentOrigin = document.referrer ? new URL(document.referrer).origin : '';
+          const fullUrl = parentOrigin ? new URL(href, parentOrigin).href : href;
+          window.top?.location.assign(fullUrl);
+        } catch (e) {
+          // Fallback: try to open in top frame
+          window.open(href, '_top');
+        }
       }
     }
   }
