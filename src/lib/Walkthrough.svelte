@@ -138,9 +138,9 @@
           // Ignore URL parsing errors
         }
 
-        // Navigate the top window with full URL
+        // Navigate the top window with full URL using window.open (works cross-origin)
         const fullUrl = parentOrigin ? new URL(href, parentOrigin).href : href;
-        window.top?.location.assign(fullUrl);
+        window.open(fullUrl, '_top');
       }
     }
   }
