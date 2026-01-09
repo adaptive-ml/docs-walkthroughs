@@ -47,6 +47,17 @@
   });
 
   onMount(() => {
+    // Parse descriptions from URL params (e.g., ?descriptions={"0":"Click..."})
+    const urlParams = new URLSearchParams(window.location.search);
+    const descriptionsParam = urlParams.get('descriptions');
+    if (descriptionsParam) {
+      try {
+        parentDescriptions = JSON.parse(decodeURIComponent(descriptionsParam));
+      } catch (e) {
+        console.error('Failed to parse descriptions param:', e);
+      }
+    }
+
     // Load walkthrough metadata then preload first image
     loadWalkthrough(walkthroughName, { baseUrl })
       .then((json) => {
