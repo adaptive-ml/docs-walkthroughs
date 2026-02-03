@@ -3,9 +3,10 @@
   import Walkthrough from './lib/Walkthrough.svelte';
   import { createThemeStore } from './lib/stores/theme.svelte';
 
-  // Get walkthrough name from URL query
+  // Get walkthrough name and version from URL query
   const params = new URLSearchParams(window.location.search);
   const walkthroughName = params.get('walkthrough') || 'create-usecase';
+  const version = params.get('version') || undefined;
 
   // Theme detection using store (no polling)
   const themeStore = createThemeStore();
@@ -23,7 +24,7 @@
 </script>
 
 <main class:dark={themeStore.isDark}>
-  <Walkthrough {walkthroughName} theme={themeStore.theme} />
+  <Walkthrough {walkthroughName} {version} theme={themeStore.theme} />
 </main>
 
 <style>

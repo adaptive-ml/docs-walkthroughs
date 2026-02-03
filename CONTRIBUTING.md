@@ -43,14 +43,55 @@ bun run build
 
 ## Capturing Walkthroughs
 
-Walkthroughs are captured using Claude Code's `/capture-walkthrough` skill with Playwright MCP.
+Walkthroughs are captured using Python scripts with Playwright.
 
 ### Quick Start
 
-1. Say `/capture-walkthrough` or "capture a walkthrough"
-2. Provide walkthrough details (name, title, URL, steps)
-3. Claude uses Playwright MCP to capture screenshots
-4. Verify in dev server at `http://localhost:5173/?walkthrough={name}`
+```bash
+cd walkthroughs
+
+# List available flows
+python -m capture --list
+
+# Authenticate (first time only)
+python -m capture --auth
+
+# Capture a walkthrough
+python -m capture create-usecase
+
+# Run with visible browser
+python -m capture create-usecase --headed
+```
+
+### Adding New Flows
+
+Create a new file in `capture/flows/` (e.g., `my_flow.py`):
+
+```python
+from capture.core import Metadata, Step
+
+METADATA = Metadata(
+    name="my-flow",
+    title="My Flow Title",
+)
+
+START_PATH = ""  # Path relative to base URL
+
+STEPS = [
+    Step(
+        name="step_name",
+        description="What this step shows",
+        selector="button.my-button",  # For cursor position
+        action="click",  # click, fill, wait, press, navigate
+        action_args={"selector": "button.my-button"},
+    ),
+    Step(
+        name="result",
+        description="Final result",
+        cursor=None,  # No cursor on last step
+    ),
+]
+```
 
 ### Requirements
 
@@ -119,8 +160,27 @@ In Mintlify MDX:
 
 ### Re-capture when UI changes
 
-1. Run `/capture-walkthrough` skill
-2. Follow the interactive workflow
+**Step 1: Explore with Playwright MCP**
+
+Before updating capture scripts, use the Playwright MCP server to manually explore the UI:
+
+```
+# Use Claude Code with Playwright MCP to:
+mcp__playwright__browser_navigate(url="https://...")
+mcp__playwright__browser_snapshot()  # Get element refs
+mcp__playwright__browser_click(ref="e123")
+mcp__playwright__browser_take_screenshot()
+```
+
+This "dry run" approach lets you:
+- Discover new selectors after UI changes
+- Verify the flow works end-to-end
+- Identify wait conditions needed
+
+**Step 2: Update and run capture scripts**
+
+1. Update selectors in the flow file based on MCP exploration
+2. Run `python -m capture <flow-name>`
 3. Verify in dev server
 4. Commit updated images + metadata
 
@@ -129,10 +189,11 @@ In Mintlify MDX:
 - **Resolution**: All screenshots are captured at exactly 1280x800 pixels
 - **Coordinates**: Stored as normalized 0-1 values for resolution-independent positioning
 - **Themes**: Light and dark captured via localStorage + body.dark class toggle
+- **Auth**: Cookies saved to `capture/.auth_cookies.json`
 
 ## Tech Stack
 
-- **Capture**: Claude Code + Playwright MCP
+- **Capture**: Python + Playwright
 - **Viewer**: Svelte 5 + Vite + TypeScript
 - **Animation**: `svelte/motion` Spring for cursor, `svelte/transition` for images
 - **Hosting**: GitHub Pages (planned)
@@ -141,6 +202,8 @@ In Mintlify MDX:
 
 | File | Purpose |
 |------|---------|
+| `capture/core.py` | Shared browser/capture utilities |
+| `capture/flows/*.py` | Flow definitions for each walkthrough |
 | `src/lib/Walkthrough.svelte` | Main component - loads JSON, manages state |
 | `src/lib/WalkthroughCursor.svelte` | Spring-animated cursor overlay |
 | `public/walkthroughs/*/walkthrough.json` | Metadata driving animations |

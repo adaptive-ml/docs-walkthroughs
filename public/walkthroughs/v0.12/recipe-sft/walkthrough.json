@@ -1,0 +1,169 @@
+{
+  "name": "recipe-sft",
+  "title": "Run a Supervised Fine-Tuning Recipe",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "recipes_page",
+      "image": "step01_recipes_page_light.webp",
+      "imageDark": "step01_recipes_page_dark.webp",
+      "description": "Select SFT recipe",
+      "cursor": null
+    },
+    {
+      "step": 2,
+      "name": "sft_page",
+      "image": "step02_sft_page_light.webp",
+      "imageDark": "step02_sft_page_dark.webp",
+      "description": "Click Run",
+      "cursor": {
+        "x": 0.9638,
+        "y": 0.0394
+      }
+    },
+    {
+      "step": 3,
+      "name": "config_page",
+      "image": "step03_config_page_light.webp",
+      "imageDark": "step03_config_page_dark.webp",
+      "description": "Select the base model",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.265
+      }
+    },
+    {
+      "step": 4,
+      "name": "model_dropdown",
+      "image": "step04_model_dropdown_light.webp",
+      "imageDark": "step04_model_dropdown_dark.webp",
+      "description": "Select Qwen3 4B",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.3897
+      }
+    },
+    {
+      "step": 5,
+      "name": "model_selected",
+      "image": "step05_model_selected_light.webp",
+      "imageDark": "step05_model_selected_dark.webp",
+      "description": "Name the output model",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.42
+      }
+    },
+    {
+      "step": 6,
+      "name": "key_entered",
+      "image": "step06_key_entered_light.webp",
+      "imageDark": "step06_key_entered_dark.webp",
+      "description": "Select the dataset",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.575
+      }
+    },
+    {
+      "step": 7,
+      "name": "dataset_dropdown",
+      "image": "step07_dataset_dropdown_light.webp",
+      "imageDark": "step07_dataset_dropdown_dark.webp",
+      "description": "Select fun-poet-completions",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.6997
+      }
+    },
+    {
+      "step": 8,
+      "name": "dataset_selected",
+      "image": "step08_dataset_selected_light.webp",
+      "imageDark": "step08_dataset_selected_dark.webp",
+      "description": "Open advanced options",
+      "cursor": {
+        "x": 0.8391,
+        "y": 0.135
+      }
+    },
+    {
+      "step": 9,
+      "name": "advanced_expanded",
+      "image": "step09_advanced_expanded_light.webp",
+      "imageDark": "step09_advanced_expanded_dark.webp",
+      "description": "Set tensor parallelism to 2",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.9875
+      }
+    },
+    {
+      "step": 10,
+      "name": "batch_entered",
+      "image": "step11_batch_entered_light.webp",
+      "imageDark": "step11_batch_entered_dark.webp",
+      "description": "Set samples per batch to 16, epochs to 3",
+      "cursor": {
+        "x": 0.6008,
+        "y": 0.7425
+      }
+    },
+    {
+      "step": 11,
+      "name": "config_complete",
+      "image": "step12_config_complete_light.webp",
+      "imageDark": "step12_config_complete_dark.webp",
+      "description": "Start the run",
+      "cursor": {
+        "x": 0.9638,
+        "y": 0.0394
+      }
+    },
+    {
+      "step": 12,
+      "name": "run_dialog",
+      "image": "step13_run_dialog_light.webp",
+      "imageDark": "step13_run_dialog_dark.webp",
+      "description": "Set GPU count to 2",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.6025
+      }
+    },
+    {
+      "step": 13,
+      "name": "gpus_entered",
+      "image": "step14_gpus_entered_light.webp",
+      "imageDark": "step14_gpus_entered_dark.webp",
+      "description": "Click Run",
+      "cursor": {
+        "x": 0.7068,
+        "y": 0.695
+      }
+    },
+    {
+      "step": 14,
+      "name": "run_started",
+      "image": "step15_run_started_light.webp",
+      "imageDark": "step15_run_started_dark.webp",
+      "description": "Click Runs",
+      "cursor": {
+        "x": 0.0996,
+        "y": 0.22
+      }
+    },
+    {
+      "step": 15,
+      "name": "runs_page",
+      "image": "step16_runs_page_light.webp",
+      "imageDark": "step16_runs_page_dark.webp",
+      "description": "Wait for training to complete",
+      "cursor": null
+    }
+  ]
+}

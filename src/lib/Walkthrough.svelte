@@ -6,7 +6,7 @@
   import WalkthroughCursor from './WalkthroughCursor.svelte';
   import WalkthroughNav from './components/WalkthroughNav.svelte';
 
-  let { walkthroughName = 'create-usecase', theme = 'light' }: { walkthroughName: string; theme?: string } = $props();
+  let { walkthroughName = 'create-usecase', version, theme = 'light' }: { walkthroughName: string; version?: string; theme?: string } = $props();
   const isDark = $derived(theme === 'dark');
   const baseUrl = import.meta.env.BASE_URL;
 
@@ -23,7 +23,7 @@
   // Derived values
   const step = $derived(data?.steps[currentStep] ?? null);
   const imageSrc = $derived(
-    step ? getImageUrl(step, walkthroughName, baseUrl, isDark) : ''
+    step ? getImageUrl(step, walkthroughName, baseUrl, isDark, version) : ''
   );
   const cursorX = $derived(step?.cursor ? step.cursor.x * 100 : 0);
   const cursorY = $derived(step?.cursor ? step.cursor.y * 100 : 0);
@@ -35,7 +35,7 @@
   // Prefetch adjacent steps when step or theme changes
   $effect(() => {
     if (data) {
-      prefetchAdjacentSteps(data, currentStep, walkthroughName, baseUrl, isDark);
+      prefetchAdjacentSteps(data, currentStep, walkthroughName, baseUrl, isDark, version);
     }
   });
 
@@ -59,18 +59,18 @@
     }
 
     // Load walkthrough metadata then preload first image
-    loadWalkthrough(walkthroughName, { baseUrl })
+    loadWalkthrough(walkthroughName, { baseUrl, version })
       .then((json) => {
         data = json;
         // Preload first image before showing UI
         const firstStep = json.steps[0];
         if (firstStep) {
-          const firstImageUrl = getImageUrl(firstStep, walkthroughName, baseUrl, isDark);
+          const firstImageUrl = getImageUrl(firstStep, walkthroughName, baseUrl, isDark, version);
           const img = new Image();
           img.onload = () => {
             firstImageLoaded = true;
             // Prefetch adjacent steps after first image loads
-            prefetchAdjacentSteps(json, 0, walkthroughName, baseUrl, isDark);
+            prefetchAdjacentSteps(json, 0, walkthroughName, baseUrl, isDark, version);
           };
           img.onerror = () => {
             // Still show UI even if image fails to load

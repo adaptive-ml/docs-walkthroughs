@@ -1,0 +1,81 @@
+{
+  "name": "chat-with-model",
+  "title": "Chat with a Model",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "models_page",
+      "image": "step01_models_page_light.webp",
+      "imageDark": "step01_models_page_dark.webp",
+      "description": "Deploy the trained model",
+      "cursor": {
+        "x": 0.9359,
+        "y": 0.2919
+      }
+    },
+    {
+      "step": 2,
+      "name": "deploy_dialog",
+      "image": "step02_deploy_dialog_light.webp",
+      "imageDark": "step02_deploy_dialog_dark.webp",
+      "description": "Confirm deployment",
+      "cursor": {
+        "x": 0.7079,
+        "y": 0.62
+      }
+    },
+    {
+      "step": 3,
+      "name": "model_deploying",
+      "image": "step03_model_deploying_light.webp",
+      "imageDark": "step03_model_deploying_dark.webp",
+      "description": "Model is now online",
+      "cursor": null
+    },
+    {
+      "step": 4,
+      "name": "model_online",
+      "image": "step04_model_online_light.webp",
+      "imageDark": "step04_model_online_dark.webp",
+      "description": "Open chat",
+      "cursor": {
+        "x": 0.9359,
+        "y": 0.2919
+      }
+    },
+    {
+      "step": 5,
+      "name": "chat_page",
+      "image": "step05_chat_page_light.webp",
+      "imageDark": "step05_chat_page_dark.webp",
+      "description": "Type your message",
+      "cursor": {
+        "x": 0.6,
+        "y": 0.8738
+      }
+    },
+    {
+      "step": 6,
+      "name": "message_typed",
+      "image": "step06_message_typed_light.webp",
+      "imageDark": "step06_message_typed_dark.webp",
+      "description": "Send your message",
+      "cursor": {
+        "x": 0.8766,
+        "y": 0.9225
+      }
+    },
+    {
+      "step": 7,
+      "name": "chat_response",
+      "image": "step07_chat_response_light.webp",
+      "imageDark": "step07_chat_response_dark.webp",
+      "description": "Model responds",
+      "cursor": null
+    }
+  ]
+}

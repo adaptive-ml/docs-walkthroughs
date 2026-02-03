@@ -1,0 +1,155 @@
+{
+  "name": "add-model",
+  "title": "Add and Deploy a Model",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "recipes_page",
+      "image": "step01_recipes_page_light.webp",
+      "imageDark": "step01_recipes_page_dark.webp",
+      "description": "From the Recipes page, click Models",
+      "cursor": {
+        "x": 0.0996,
+        "y": 0.36
+      }
+    },
+    {
+      "step": 2,
+      "name": "click_add_model",
+      "image": "step02_click_add_model_light.webp",
+      "imageDark": "step02_click_add_model_dark.webp",
+      "description": "Click 'Add model'",
+      "cursor": {
+        "x": 0.9488,
+        "y": 0.0394
+      }
+    },
+    {
+      "step": 3,
+      "name": "open_model_dropdown",
+      "image": "step03_open_model_dropdown_light.webp",
+      "imageDark": "step03_open_model_dropdown_dark.webp",
+      "description": "Click to select a model",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.53
+      }
+    },
+    {
+      "step": 4,
+      "name": "filter_models",
+      "image": "step04_filter_models_light.webp",
+      "imageDark": "step04_filter_models_dark.webp",
+      "description": "Type 'Qwen3 4B' to filter",
+      "cursor": null
+    },
+    {
+      "step": 5,
+      "name": "select_model",
+      "image": "step05_select_model_light.webp",
+      "imageDark": "step05_select_model_dark.webp",
+      "description": "Select 'Qwen3 4B Instruct 2507'",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.16
+      }
+    },
+    {
+      "step": 6,
+      "name": "click_add",
+      "image": "step06_click_add_light.webp",
+      "imageDark": "step06_click_add_dark.webp",
+      "description": "Click 'Add'",
+      "cursor": {
+        "x": 0.7145,
+        "y": 0.6225
+      }
+    },
+    {
+      "step": 7,
+      "name": "model_added",
+      "image": "step07_model_added_light.webp",
+      "imageDark": "step07_model_added_dark.webp",
+      "description": "Model added to use case",
+      "cursor": {
+        "x": 0.6,
+        "y": 0.24
+      }
+    },
+    {
+      "step": 8,
+      "name": "click_deploy",
+      "image": "step08_click_deploy_light.webp",
+      "imageDark": "step08_click_deploy_dark.webp",
+      "description": "Click 'Deploy'",
+      "cursor": {
+        "x": 0.9359,
+        "y": 0.2394
+      }
+    },
+    {
+      "step": 9,
+      "name": "confirm_deploy",
+      "image": "step09_confirm_deploy_light.webp",
+      "imageDark": "step09_confirm_deploy_dark.webp",
+      "description": "Click 'Deploy' to confirm",
+      "cursor": {
+        "x": 0.7079,
+        "y": 0.62
+      }
+    },
+    {
+      "step": 10,
+      "name": "model_online",
+      "image": "step10_model_online_light.webp",
+      "imageDark": "step10_model_online_dark.webp",
+      "description": "Model is now online",
+      "cursor": null
+    },
+    {
+      "step": 11,
+      "name": "click_chat",
+      "image": "step11_click_chat_light.webp",
+      "imageDark": "step11_click_chat_dark.webp",
+      "description": "Click the chat icon",
+      "cursor": {
+        "x": 0.9359,
+        "y": 0.2394
+      }
+    },
+    {
+      "step": 12,
+      "name": "type_message",
+      "image": "step12_type_message_light.webp",
+      "imageDark": "step12_type_message_dark.webp",
+      "description": "Type a message",
+      "cursor": {
+        "x": 0.6,
+        "y": 0.8738
+      }
+    },
+    {
+      "step": 13,
+      "name": "send_message",
+      "image": "step13_send_message_light.webp",
+      "imageDark": "step13_send_message_dark.webp",
+      "description": "Click Submit",
+      "cursor": {
+        "x": 0.8766,
+        "y": 0.9225
+      }
+    },
+    {
+      "step": 14,
+      "name": "model_responds",
+      "image": "step14_model_responds_light.webp",
+      "imageDark": "step14_model_responds_dark.webp",
+      "description": "The model responds",
+      "cursor": null
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "name": "create-usecase",
+  "title": "Create a Use Case",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "click_new_usecase",
+      "image": "step01_click_new_usecase_light.webp",
+      "imageDark": "step01_click_new_usecase_dark.webp",
+      "description": "Click the New use case button",
+      "cursor": {
+        "x": 0.9417,
+        "y": 0.0394
+      }
+    },
+    {
+      "step": 2,
+      "name": "enter_name",
+      "image": "step02_enter_name_light.webp",
+      "imageDark": "step02_enter_name_dark.webp",
+      "description": "Enter a name for your use case",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.4576
+      }
+    },
+    {
+      "step": 3,
+      "name": "click_create",
+      "image": "step03_click_create_light.webp",
+      "imageDark": "step03_click_create_dark.webp",
+      "description": "Click Create to finish",
+      "cursor": {
+        "x": 0.7085,
+        "y": 0.6462
+      }
+    },
+    {
+      "step": 4,
+      "name": "result",
+      "image": "step04_result_light.webp",
+      "imageDark": "step04_result_dark.webp",
+      "description": "Your use case is ready",
+      "cursor": null
+    }
+  ]
+}

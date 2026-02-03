@@ -9,17 +9,20 @@ import type { WalkthroughData, WalkthroughStep } from '../types';
 
 export interface LoadOptions {
   baseUrl: string;
+  version?: string;
 }
 
 /**
  * Load walkthrough metadata from JSON file.
  * Does NOT preload images - use prefetch functions for that.
+ * Defaults to v0.11 if no version specified (backwards compatibility).
  */
 export async function loadWalkthrough(
   name: string,
   options: LoadOptions
 ): Promise<WalkthroughData> {
-  const url = `${options.baseUrl}walkthroughs/${name}/walkthrough.json`;
+  const version = options.version || 'v0.11';
+  const url = `${options.baseUrl}walkthroughs/${version}/${name}/walkthrough.json`;
   const response = await fetch(url);
 
   if (!response.ok) {
@@ -31,16 +34,19 @@ export async function loadWalkthrough(
 
 /**
  * Get the appropriate image URL for a step based on theme.
+ * Defaults to v0.11 if no version specified (backwards compatibility).
  */
 export function getImageUrl(
   step: WalkthroughStep,
   walkthroughName: string,
   baseUrl: string,
-  isDark: boolean
+  isDark: boolean,
+  version?: string
 ): string {
+  const v = version || 'v0.11';
   const folder = step.folder || walkthroughName;
   const imageFile = isDark && step.imageDark ? step.imageDark : step.image;
-  return `${baseUrl}walkthroughs/${folder}/${imageFile}`;
+  return `${baseUrl}walkthroughs/${v}/${folder}/${imageFile}`;
 }
 
 // Cache of prefetched image URLs to avoid duplicate requests
@@ -75,19 +81,20 @@ export function prefetchAdjacentSteps(
   walkthroughName: string,
   baseUrl: string,
   isDark: boolean,
+  version?: string,
   lookahead: number = 2
 ): void {
   const steps = data.steps;
 
   // Prefetch current and next N steps
   for (let i = currentStep; i <= Math.min(currentStep + lookahead, steps.length - 1); i++) {
-    const url = getImageUrl(steps[i], walkthroughName, baseUrl, isDark);
+    const url = getImageUrl(steps[i], walkthroughName, baseUrl, isDark, version);
     prefetchImage(url);
   }
 
   // Also prefetch previous step for back navigation
   if (currentStep > 0) {
-    const url = getImageUrl(steps[currentStep - 1], walkthroughName, baseUrl, isDark);
+    const url = getImageUrl(steps[currentStep - 1], walkthroughName, baseUrl, isDark, version);
     prefetchImage(url);
   }
 }

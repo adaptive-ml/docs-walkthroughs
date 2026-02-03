@@ -1,5 +1,10 @@
 # Auth state (contains session cookies)
-capture/.auth_state.json
+capture/.auth_cookies.json
+capture/.id_counter.json
+
+# Python
+__pycache__/
+*.py[cod]
 
 # Logs
 logs
