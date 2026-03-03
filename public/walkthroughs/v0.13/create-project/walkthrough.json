@@ -1,0 +1,51 @@
+{
+  "name": "create-project",
+  "title": "Create a Project",
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "steps": [
+    {
+      "step": 1,
+      "name": "click_new_project",
+      "image": "step01_click_new_project_light.webp",
+      "imageDark": "step01_click_new_project_dark.webp",
+      "description": "Click the New project button",
+      "cursor": {
+        "x": 0.9457,
+        "y": 0.0394
+      }
+    },
+    {
+      "step": 2,
+      "name": "enter_name",
+      "image": "step02_enter_name_light.webp",
+      "imageDark": "step02_enter_name_dark.webp",
+      "description": "Enter a name for your project",
+      "cursor": {
+        "x": 0.5,
+        "y": 0.3943
+      }
+    },
+    {
+      "step": 3,
+      "name": "click_create",
+      "image": "step03_click_create_light.webp",
+      "imageDark": "step03_click_create_dark.webp",
+      "description": "Click Create to finish",
+      "cursor": {
+        "x": 0.7085,
+        "y": 0.7137
+      }
+    },
+    {
+      "step": 4,
+      "name": "result",
+      "image": "step04_result_light.webp",
+      "imageDark": "step04_result_dark.webp",
+      "description": "Your project is ready",
+      "cursor": null
+    }
+  ]
+}
