@@ -54,8 +54,8 @@
       "imageDark": "step05_select_model_dark.webp",
       "description": "Select 'Qwen3 4B Instruct 2507'",
       "cursor": {
-        "x": 0.4945,
-        "y": 0.2462
+        "x": 0.5,
+        "y": 0.3738
       }
     },
     {

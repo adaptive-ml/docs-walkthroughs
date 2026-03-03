@@ -131,8 +131,8 @@
       "imageDark": "step12_run_dialog_dark.webp",
       "description": "Set GPU count to 2",
       "cursor": {
-        "x": 0.7301,
-        "y": 0.4831
+        "x": 0.5,
+        "y": 0.6025
       }
     },
     {
@@ -145,25 +145,6 @@
         "x": 0.7068,
         "y": 0.695
       }
-    },
-    {
-      "step": 14,
-      "name": "run_started",
-      "image": "step14_run_started_light.webp",
-      "imageDark": "step14_run_started_dark.webp",
-      "description": "Click Runs",
-      "cursor": {
-        "x": 0.0996,
-        "y": 0.22
-      }
-    },
-    {
-      "step": 15,
-      "name": "runs_page",
-      "image": "step15_runs_page_light.webp",
-      "imageDark": "step15_runs_page_dark.webp",
-      "description": "Training started",
-      "cursor": null
     }
   ]
 }
